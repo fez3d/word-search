@@ -13,3 +13,15 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require jquery
+
+function search() {
+  let param = $(".js-search-input").val();
+  $.ajax({
+    url: `http://localhost:3000/users?search=${param}`,
+    success: function(response) {
+      $(".js-table").empty()
+      $(".js-table").append(response.attachmentPartial);
+    }
+  });
+}
