@@ -17,11 +17,16 @@
 
 function search() {
   let param = $(".js-search-input").val();
-  $.ajax({
-    url: `http://localhost:3000/users?search=${param}`,
-    success: function(response) {
-      $(".js-table").empty()
-      $(".js-table").append(response.attachmentPartial);
-    }
-  });
+  if(param != ""){
+    $.ajax({
+      url: `/users?search=${param}`,
+      success: function(response) {
+        $(".js-users-content").empty()
+        $(".js-users-content").html(response.attachment_partial);
+      }
+    });
+  } else {
+    $(".js-users-content").empty()
+  }
 }
+

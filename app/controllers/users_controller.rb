@@ -4,11 +4,12 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    param = params[:search]
-    unless param.nil?
-      @users = User.search(param).entries
-      render :json => { :attachmentPartial => render_to_string(layout: false, template: "users/template.html.erb", locals: { users: @users}) }
+    search = params[:search]
+    if search.present?
+      @users = User.search(search).entries
+      render json: { attachment_partial: render_to_string(layout: false, template: "users/template.html.erb", locals: { users: @users}) }
     end
+    byebug
   end
 
   # GET /users/1

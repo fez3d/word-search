@@ -39,8 +39,6 @@ class User
   field :active, type: Mongoid::Boolean
   
   def self.search(search)
-    if search
-      any_of({name: search}, {last_name: search}, {email: search})
-    end
+    any_of({name: /#{search}/i}, {last_name: /#{search}/i}, {email: /#{search}/i})
   end
 end
