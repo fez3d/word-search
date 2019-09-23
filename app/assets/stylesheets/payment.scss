@@ -1,0 +1,100 @@
+// Place all the styles related to the Payment controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$purple-color: #a119ff;
+$grey-color: grey;
+$white-color: white;
+$black-color: black;
+
+@mixin payment-selector-size() {
+  width: 88px;
+  height: 60px;
+}
+
+@mixin payment-image($height, $padding-top) {
+  border-style: solid;
+  border-width: 1px;
+  border-color: $purple-color;
+  padding: $padding-top 23px;
+  width: 40px;
+  height: $height;
+  border-radius: 3px;
+}
+
+.payment-container {
+  border-style: solid;
+  border-width: 1px;
+  border-color: $purple-color;
+  max-width: 284px;
+  margin: auto;
+  padding: 30px 80px;
+  text-align: left;
+
+  .title-text {
+    font-size: 18px;
+  }
+
+  .coupon-search {
+    margin: 0px;
+
+    .text-field {
+      width: 165px;
+      font-size: 15px;
+      height: 34px;
+      border-style: solid $grey-color;
+      border-width: 1px;
+      background-color: $white-color;
+      padding-left: 10px;
+      color: $grey-color;
+    }
+
+    .delete-button {
+      background-color: $white-color;
+      text-decoration: none;
+      font-size: 15px;
+      border-style: solid $black-color;
+      border-width: 1px;
+      padding: 10px 20px;
+      border-color: $purple-color;
+      color: $purple-color;
+    }
+  }
+
+  .notice {
+    margin-top: 0px;
+    color: $grey-color;
+  }
+
+  .payment-options {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    .card-container {
+      @include payment-selector-size();
+
+      .card-img {
+        @include payment-image(26px, 16px);
+      }
+    }
+
+    .oxxo-container {
+      @include payment-selector-size();
+      margin-left: 10px;
+      margin-right: 10px;
+
+      .oxxo-img {
+        @include payment-image(20px, 19px);
+      }
+    }
+
+    .spei-container {
+      @include payment-selector-size();
+
+      .spei-img {
+        @include payment-image(12px, 23px);
+      }
+    }
+  }
+}

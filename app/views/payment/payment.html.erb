@@ -1,0 +1,22 @@
+<div class="payment-container">
+  <p class="title-text">¿Tienes un cupón de descuento?</p>
+  <%= form_tag users_path do %>
+  <div class="coupon-search">
+    <%= text_field_tag "", nil ,class: "text-field", placeholder: "HOMIE_05" %>
+    <%= button_tag "Eliminar", class: "delete-button" %>
+  </div>
+  <p class="notice"><%= image_tag 'unknown.png'%> Tu cupón ha sido aplicado.</p>
+  <p class="title-text">Elige tu método de pago</p>
+  <div class="payment-options">
+    <div class="card-container">
+      <%= image_submit_tag "purple_card.png", class: "card-img", onclick: "cardSelected()" %>
+    </div>
+    <div class="oxxo-container">
+      <%= image_submit_tag "purple_oxxo.png", class: "oxxo-img", onclick: "oxxoSelected()" %>
+    </div>
+    <div class="spei-container">
+      <%= image_submit_tag "purple_spei.png", class: "spei-img", onclick: "speiSelected()" %>
+    </div>
+  </div>
+  <% end %>
+</div>

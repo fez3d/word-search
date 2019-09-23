@@ -30,3 +30,32 @@ function search() {
   }
 }
 
+function cardSelected() {
+  event.preventDefault();
+  $(".oxxo-img").attr("src", "assets/purple_oxxo.png");
+  $(".oxxo-container").css("background-color", "white");
+  $(".spei-img").attr("src", "assets/purple_spei.png");
+  $(".spei-container").css("background-color", "white");
+  $(".card-img").attr("src", "assets/white_card.png");
+  $(".card-container").css("background-color", "#A119FF");
+}
+
+function oxxoSelected() {
+  event.preventDefault();
+  $(".card-img").attr("src", "assets/purple_card.png");
+  $(".card-container").css("background-color", "white");
+  $(".spei-img").attr("src", "assets/purple_spei.png");
+  $(".spei-container").css("background-color", "white");
+  $(".oxxo-img").attr("src", "assets/white_oxxo.png");
+  $(".oxxo-container").css("background-color", "#A119FF");
+}
+
+function speiSelected() {
+  event.preventDefault();
+  $(".card-img").attr("src", "assets/purple_card.png");
+  $(".card-container").css("background-color", "white");
+  $(".oxxo-img").attr("src", "assets/purple_oxxo.png");
+  $(".oxxo-container").css("background-color", "white");
+  $(".spei-img").attr("src", "assets/white_spei.png");
+  $(".spei-container").css("background-color", "#A119FF");
+}

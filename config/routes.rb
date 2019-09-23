@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get '/payment', to: "payment#payment"
+
   devise_for :users
   resources :users
   root "users#index"

@@ -9,7 +9,6 @@ class UsersController < ApplicationController
       @users = User.search(search).entries
       render json: { attachment_partial: render_to_string(layout: false, template: "users/template.html.erb", locals: { users: @users}) }
     end
-    byebug
   end
 
   # GET /users/1
